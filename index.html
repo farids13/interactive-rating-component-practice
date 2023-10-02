@@ -16,6 +16,7 @@
     .attribution { font-size: 11px; text-align: center;}
     .attribution a { color: hsl(228, 45%, 44%); }
     body{
+      background: url(./design/active-states.jpg) no-repeat center fixed;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -46,6 +47,7 @@
       font-family: 'Overpass';
       background-color: hsl(213, 19%, 18%);
       box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+      opacity: 0.5;
       /* display: none; */
     }
     .star{
@@ -95,13 +97,15 @@
       background-color: hsl(217, 12%, 63%);
     }
     .start > button{
+      margin-top: 20px;
       height: 45px;
       width: 340px;
       border-radius: inherit;
       text-transform: uppercase;
       color: white;
-      font-size: 17px;
-      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.6px;
+      border: none;
       background-color:hsl(25, 97%, 53%) ;
     }
     .start > button:hover{
