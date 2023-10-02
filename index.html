@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Inter:wght@400;700&family=Kumbh+Sans:wght@700&family=League+Spartan:wght@400;700&family=Lexend+Deca:wght@400;700&family=Montserrat:wght@600&family=Open+Sans&family=Outfit:wght@100;300;400;600&family=Overpass:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-color: hsl(216, 12%, 8%);
+    }
+    footer{
+      position: absolute;
+      bottom: 0;
+    }
+    .thanks{
+      display: none;
+    }
+    .start{
+      height: 410px;
+      width: 410px;
+      border-radius: 30px;
+      display: flex;
+      color: white;
+      box-sizing: border-box;
+      padding: 30px;
+      padding-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      font-family: 'Overpass';
+      background-color: hsl(213, 19%, 18%);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+      /* display: none; */
+    }
+    .star{
+      margin: 3px;
+      margin-bottom: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      background-color: hsl(213, 19%, 24%);
+    }
+    .start h1{
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    .start p{
+      margin: 0;
+      line-height: 22px;
+      font-size: 15px;
+      margin-bottom: 21px;
+    }
+    .options{
+      display: flex;
+      justify-content: space-between;
+      padding-right: 10px;
+      padding-top: 10px;
+    }
+    .circle{
+      height: 50px;
+      width: 50px;
+      background-color: transparent;
+      border-radius: 50%;
+      color:  rgba(255, 255, 255, 0.6);
+      background-color: hsl(213, 19%, 18%);
+      font-size: 15px;
+      margin-bottom: 8px;
+      border: none;
+      background-color: hsl(213, 19%, 24%);
+    }
+    .circle:hover{
+      background-color: hsl(25, 97%, 53%);
+    }
+    .circle:active{
+      background-color: hsl(217, 12%, 63%);
+    }
+    .start > button{
+      height: 45px;
+      width: 340px;
+      border-radius: inherit;
+      text-transform: uppercase;
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+      background-color:hsl(25, 97%, 53%) ;
+    }
+    .start > button:hover{
+      background-color: white;
+      color: hsl(25, 97%, 53%);
+    }
+    .thanks{
+      height: 410px;
+      width: 410px;
+      border-radius: 30px;
+      color: white;
+      box-sizing: border-box;
+      padding: 30px;
+      padding-top: 45px;
+      padding-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: 'Overpass';
+      display: none;
+      background-color: hsl(213, 19%, 18%);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    .thanks img {
+      width: 160px;
+      margin: 0;
+      padding: 0;
+    }
+    .info{
+      margin-top: 35px;
+      width: 190px;
+      height: 30px;
+      border-radius: inherit;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: hsl(25, 97%, 53%);
+    }
+    .thanks h1 {
+      margin: 0;
+      margin-top: 35px;
+      font-size: 28px;
+    }
+    .thanks p {
+      margin: 0;
+      margin-top: 11px;
+      line-height: 23px;
+      text-align: center;
+      font-size: 15px;
+      padding-right: 5px;
+      width: 343px;
+    }
+   
+    *{
+      /* outline: 1px solid red; */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Rating state start -->
+
+  <main class="start">
+    <div class="star"><img src="./images/icon-star.svg" alt=""></div>
+    <h1>How did we do?</h1>
+    <p>
+      Please let us know how we did with your support request. All feedback is appreciated
+      to help us improve our offering!
+    </p>
+    <div class="options">
+      <button class="circle" data-value="1">1</button>
+      <button class="circle" data-value="2">2</button>
+      <button class="circle" data-value="3">3</button>
+      <button class="circle" data-value="4">4</button>
+      <button class="circle" data-value="5">5</button>
+    </div>
+    <button class="submit">Submit</button>
+  </main>
+
+  <!-- Rating state end -->
+  <main class="thanks">
+     <!-- Thank you state start -->
+    
+  <img src="./images/illustration-thank-you.svg" alt="">
+
+  <div class="info"><p>You selected <span class="selected"></span> out of 5</p></div>
+
+  <h1>Thank you!</h1>
+
+  <p>
+    We appreciate you taking the time to give a rating. If you ever need more support,
+    don’t hesitate to get in touch!
+  </p>
+
+  <!-- Thank you state end -->
+
+  </main>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Farid Satria</a>.
+  </footer>
+  
+  
+
+  <script>
+    const circleButtons = document.querySelectorAll('.circle');
+
+    circleButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const value = this.getAttribute('data-value');
+
+            circleButtons.forEach(btn =>{
+              btn.style.backgroundColor = '';
+            });
+
+            localStorage.setItem('selectedValue', value);
+
+            const selectedElement = document.querySelector('.selected');
+            selectedElement.textContent = ' ' + value + ' ';
+
+            button.style.backgroundColor = 'hsl(217, 12%, 63%)';
+        });
+    });
+
+    const submitButton = document.querySelector('.submit');
+    submitButton.addEventListener('click', function () {
+        const selectedValue = localStorage.getItem('selectedValue');
+
+        console.log(selectedValue);
+
+        if(selectedValue === null){
+          alert('Pilih Dulu Om 1 - 5 nya');
+        }
+
+        if (selectedValue != null) {
+            const start = document.querySelector('.start');
+            start.style.display = 'none';
+            
+            const thanks = document.querySelector('.thanks');
+            thanks.style.display = 'flex';
+        }else{
+          const start = document.querySelector('.start');
+            start.style.display = 'flex';
+            
+            const thanks = document.querySelector('.thanks');
+            thanks.style.display = 'none';
+        }
+    });
+
+    window.addEventListener('load', function () {
+      localStorage.removeItem('selectedValue');
+    });
+
+    
+
+  </script>
+</body>
+</html>
